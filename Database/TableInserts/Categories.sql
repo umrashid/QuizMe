@@ -1,0 +1,1 @@
+ INSERT INTO Categories(CategoryName) VALUES('Capitals');
