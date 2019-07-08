@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane dividerPositions="0.4951923076923077" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.GameController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="38.0" layoutY="38.0" prefHeight="63.0" prefWidth="219.0" text="Choose the type of the game you want to play:" wrapText="true">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Button id="category" layoutX="90.0" layoutY="177.0" mnemonicParsing="false" onAction="#goToCategory" onMouseClicked="#goToCategory" onMouseEntered="#showCategoryGameInfo" onMouseExited="#showClear" prefHeight="47.0" prefWidth="114.0" text="Category">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button id="difficulty" layoutX="90.0" layoutY="312.0" mnemonicParsing="false" onMouseEntered="#showDifficultyGameInfo" onMouseExited="#showClear" prefHeight="47.0" prefWidth="114.0" text="Difficulty">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0">
+         <children>
+            <Label fx:id="gameInfo" layoutX="14.0" layoutY="14.0" prefHeight="471.0" prefWidth="274.0" text="Rules of the Game:" wrapText="true" />
+            <TextArea editable="false" layoutX="3.0" layoutY="6.0" prefHeight="487.0" prefWidth="293.0" text="Rules of the Game:&#10;1. Each game will have 10 questions related to the difficulty or category level.&#10;2. Each question will have four options.&#10;3. Only one of the four options can be correct.&#10;4. The user will only get a score if they choose the correct answer.&#10;5. The user will have 10 seconds to answer a question and if the user fails to answer the question the score will be 0.&#10;6. A user will get a higher score if he answer the question as quickly as possible.&#10;7. If the user answers within the 1 second then the user will get 10 points for each quesiton and as the timer goes down the score points will decrease.&#10;&#10;" wrapText="true">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </TextArea>
+         </children></AnchorPane>
+  </items>
+</SplitPane>
