@@ -5,7 +5,8 @@ import java.sql.SQLException;
 
 public class User {
 	private String userid;
-
+	Database db = new Database();
+	
 	public String getUserid() {
 		return userid;
 	}
@@ -14,7 +15,6 @@ public class User {
 		this.userid = userid;
 	}
 
-	Database db = new Database();
 	
 	public User(String userid){
 		this.userid = userid;
