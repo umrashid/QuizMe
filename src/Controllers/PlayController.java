@@ -1,7 +1,10 @@
 package Controllers;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map.Entry;
 import java.util.Random;
 import java.util.Timer;
@@ -45,7 +48,9 @@ public class PlayController {
 	private ProgressBar timer;
 	@FXML
 	private CategoryGame categoryGame = new CategoryGame();
-	private double Score ;
+	
+	private String Category = "Capitals";
+	private double Score;
 	
 	public double getScore() {
 		return this.Score;
@@ -55,7 +60,7 @@ public class PlayController {
 		this.Score = score;
 	}
 
-	private HashMap<String, String[]> questions = categoryGame.getQuestions();
+	private HashMap<String, String[]> questions = categoryGame.getFiveQuestions(this.Category);
 	
 	
 	@FXML
@@ -161,12 +166,11 @@ public class PlayController {
 		// Get a random entry from the HashMap.
 		String[] result = new String[5];
 		Object[] crunchifyKeys = questions.keySet().toArray();
-		//System.out.println(crunchifyKeys.length);
 		if(crunchifyKeys.length == 0){
 			result = null;
 			return result;
 		}
-		Object key = crunchifyKeys[new Random().nextInt(crunchifyKeys.length)];
+		Object key = crunchifyKeys[new Random().nextInt(crunchifyKeys.length)];	
 		System.out.println("\n" + key + " :: " + questions.get(key)[0]);
 		result[0] = (String) key;
 		result[1] = (String) questions.get(key)[0];
