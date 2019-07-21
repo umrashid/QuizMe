@@ -55,7 +55,7 @@ public class PlayController {
 		this.Score = score;
 	}
 
-	HashMap<String, String[]> questions = categoryGame.getQuestions();
+	private HashMap<String, String[]> questions = categoryGame.getQuestions();
 	
 	
 	@FXML

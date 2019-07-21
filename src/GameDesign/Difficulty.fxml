@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.GameController">
+   <children>
+      <Label layoutX="152.0" layoutY="36.0" text="Choose Your Difficulty">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <Button alignment="CENTER" layoutX="211.0" layoutY="119.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Easy">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="210.0" layoutY="240.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Medium">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="210.0" layoutY="366.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Hard">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

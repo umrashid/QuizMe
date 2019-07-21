@@ -56,21 +56,7 @@
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Button" GridPane.rowIndex="2">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="2">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="2">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Button>
+            
          </children>
       </GridPane>
    </children>

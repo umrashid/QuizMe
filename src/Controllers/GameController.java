@@ -50,6 +50,14 @@ public class GameController {
 		window.show();
 	}
 	
+	public void goToDifficulty(ActionEvent event) throws IOException{
+		Parent category = FXMLLoader.load(getClass().getResource("/GameDesign/Difficulty.fxml"));
+		Scene categoryScene = new Scene(category);
+		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+		window.setScene(categoryScene);
+		window.show();
+	}
+	
 	@FXML
 	public void goToPlay(ActionEvent event) throws IOException{
 		Parent game = FXMLLoader.load(getClass().getResource("/GameDesign/Play.fxml"));
