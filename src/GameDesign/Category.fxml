@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.GameController">
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PlayController">
    <children>
       <Label layoutX="152.0" layoutY="36.0" text="Choose Your Category:">
          <font>
@@ -26,17 +26,17 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Soccer" GridPane.rowIndex="1">
+            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Animals" GridPane.rowIndex="1">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Countries" GridPane.columnIndex="2">
+            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Politics" GridPane.columnIndex="2">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Flags" GridPane.columnIndex="1">
+            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Astrology" GridPane.columnIndex="1">
                <font>
                   <Font size="24.0" />
                </font>
@@ -46,12 +46,12 @@
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Food" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Geography" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Automobiles" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <font>
                   <Font size="24.0" />
                </font>

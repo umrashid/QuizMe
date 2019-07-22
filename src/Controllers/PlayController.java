@@ -31,7 +31,8 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class PlayController {
-	
+	@FXML
+	private Label gameInfo;
 	@FXML
 	private Label showQuestion;
 	@FXML
@@ -46,11 +47,29 @@ public class PlayController {
 	private Button startGame;
 	@FXML
 	private ProgressBar timer;
-	@FXML
-	private CategoryGame categoryGame = new CategoryGame();
 	
-	private String Category = "Capitals";
+	private CategoryGame categoryGame = new CategoryGame();
+	private String Category = "Astrology";
 	private double Score;
+	private String categoryExplanation;
+	private String difficultyExplanation;
+	private HashMap<String, String[]> questions = categoryGame.getFiveQuestions(this.Category);
+	
+	public HashMap<String, String[]> getQuestions() {
+		return questions;
+	}
+
+	public void setQuestions(HashMap<String, String[]> questions) {
+		this.questions = questions;
+	}
+
+	public String getCategory() {
+		return Category;
+	}
+
+	public void setCategory(String category) {
+		Category = category;
+	}
 	
 	public double getScore() {
 		return this.Score;
@@ -58,10 +77,7 @@ public class PlayController {
 
 	public void setScore(double score) {
 		this.Score = score;
-	}
-
-	private HashMap<String, String[]> questions = categoryGame.getFiveQuestions(this.Category);
-	
+	}	
 	
 	@FXML
 	public void startGame(){
@@ -166,6 +182,7 @@ public class PlayController {
 		// Get a random entry from the HashMap.
 		String[] result = new String[5];
 		Object[] crunchifyKeys = questions.keySet().toArray();
+		System.out.println(crunchifyKeys.length);
 		if(crunchifyKeys.length == 0){
 			result = null;
 			return result;
@@ -173,13 +190,58 @@ public class PlayController {
 		Object key = crunchifyKeys[new Random().nextInt(crunchifyKeys.length)];	
 		System.out.println("\n" + key + " :: " + questions.get(key)[0]);
 		result[0] = (String) key;
-		result[1] = (String) questions.get(key)[0];
+		result[1] = (String) this.questions.get(key)[0];
 		result[2] = (String) questions.get(key)[1];
 		result[3] = (String) questions.get(key)[2];
 		result[4] = (String) questions.get(key)[3];
 		questions.remove(key);
 		return result;
 		
+	}
+	
+	@FXML
+	public void showCategoryGameInfo(){
+		gameInfo.setText("Category");
+		
+	}
+	@FXML
+	public void showDifficultyGameInfo(){
+		gameInfo.setText("Difficulty");
+		
+	}
+	
+	@FXML
+	public void showClear(){
+		gameInfo.setText("");
+	}
+	
+	
+	@FXML
+	public void goToCategory(ActionEvent event) throws IOException{
+		Parent category = FXMLLoader.load(getClass().getResource("/GameDesign/Category.fxml"));
+		Scene categoryScene = new Scene(category);
+		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+		window.setScene(categoryScene);
+		window.show();
+	}
+	
+	public void goToDifficulty(ActionEvent event) throws IOException{
+		Parent category = FXMLLoader.load(getClass().getResource("/GameDesign/Difficulty.fxml"));
+		Scene categoryScene = new Scene(category);
+		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+		window.setScene(categoryScene);
+		window.show();
+	}
+	
+	@FXML
+	public void goToPlay(ActionEvent event) throws IOException{
+		Button btn = (Button) event.getSource();
+		setCategory(btn.getText());
+		Parent game = FXMLLoader.load(getClass().getResource("/GameDesign/Play.fxml"));
+		Scene gameScene = new Scene(game);
+		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+		window.setScene(gameScene);
+		window.show();
 	}
 	
 
