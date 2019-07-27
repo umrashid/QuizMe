@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
+<?import java.net.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
@@ -36,15 +38,26 @@
                   <Font name="Arial Italic" size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="userName1" layoutX="180.0" layoutY="201.0" prefWidth="240.0" promptText="Username or email address" />
-            <PasswordField fx:id="password1" layoutX="180.0" layoutY="240.0" prefWidth="240.0" promptText="Password" />
-            <Button id="record-sales" fx:id="logInButton" defaultButton="true" layoutX="277.0" layoutY="296.0" mnemonicParsing="false" onAction="#logUserIn" stylesheets="@../application/buttons.css" text="Login" />
-            <Hyperlink layoutX="229.0" layoutY="341.0" onAction="#SignUpScene" text="New? Create an account?" textFill="#5712eb" />
+            <Button id="record-sales" fx:id="logInButton" defaultButton="true" layoutX="238.0" layoutY="286.0" mnemonicParsing="false" onAction="#logUserIn" prefHeight="42.0" prefWidth="137.0" stylesheets="@../application/button.css" text="Login" />
+            <Hyperlink layoutX="177.0" layoutY="342.0" onAction="#SignUpScene" text="New? Create an account?" textFill="#5712eb">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font></Hyperlink>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="225.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/quizmelogo.png" />
                </image>
             </ImageView>
+            <JFXTextField fx:id="userName1" focusColor="#cd0000" labelFloat="true" layoutX="173.0" layoutY="201.0" prefHeight="25.0" prefWidth="256.0" promptText="Username">
+            <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXTextField>
+            <JFXPasswordField fx:id="password1" layoutX="172.0" layoutY="242.0" prefHeight="25.0" prefWidth="256.0" promptText="Password">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXPasswordField>
          </children>
       </AnchorPane>
    </children>

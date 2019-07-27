@@ -14,6 +14,9 @@ import javafx.stage.Stage;
 import javafx.scene.control.TextField;
 import org.w3c.dom.events.EventListener;
 
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
+
 import application.NewUser;
 
 import java.beans.EventHandler;
@@ -23,9 +26,25 @@ import java.util.EventObject;
 public class LoginController{
 
     @FXML
-    private TextField userName1;
+    private JFXTextField userName1;
     @FXML
-    private PasswordField password1;
+    private JFXPasswordField password1;
+    
+    public JFXTextField getUserName1() {
+		return userName1;
+	}
+
+	public void setUserName1(JFXTextField userName1) {
+		this.userName1 = userName1;
+	}
+
+	public JFXPasswordField getPassword1() {
+		return password1;
+	}
+
+	public void setPassword1(JFXPasswordField password1) {
+		this.password1 = password1;
+	}
     
     //Create User Fields
    
@@ -129,7 +148,7 @@ public class LoginController{
 
 
     public void logUserIn(javafx.event.ActionEvent actionEvent) throws IOException {
-        application.ExistingUser ExistingUser = new application.ExistingUser(userName1.getText(), password1.getText());
+        application.ExistingUser ExistingUser = new application.ExistingUser(getUserName1().getText(), getPassword1().getText());
         if(ExistingUser.verifyPassword()){
             Parent Game;
             Game = FXMLLoader.load(getClass().getResource("/GameDesign/Game.fxml"));
