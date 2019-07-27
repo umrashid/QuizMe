@@ -28,6 +28,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Labeled;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -36,6 +37,10 @@ public class PlayController {
 	private Label gameInfo;
 	@FXML
 	private Label showQuestion;
+	@FXML
+	private Label ready;
+	@FXML
+	private Label startGameLabel;
 	@FXML
 	private Button choice1;
 	@FXML
@@ -48,6 +53,8 @@ public class PlayController {
 	private Button startGame;
 	@FXML
 	private ProgressBar timer;
+	@FXML
+	private ImageView logo;
 	
 	private CategoryGame categoryGame = new CategoryGame();
 	private DifficultyGame difficultyGame = new DifficultyGame();
@@ -179,6 +186,9 @@ public class PlayController {
 		choice3.setVisible(true);
 		choice4.setVisible(true);
 		startGame.setVisible(false);
+		ready.setVisible(false);
+		startGameLabel.setVisible(false);
+		logo.setVisible(false);
 		timer.setVisible(true);
 	}
 	
