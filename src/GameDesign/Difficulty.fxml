@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
@@ -9,25 +10,35 @@
 
 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PlayController">
    <children>
-      <Label layoutX="152.0" layoutY="36.0" text="Choose Your Difficulty">
+      <ImageView fitHeight="500.0" fitWidth="600.0">
+         <image>
+            <Image url="@../images/orangewallpaper.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="118.0" layoutY="181.0" text="Choose Your Difficulty Level:" textFill="#f5f0f0">
          <font>
             <Font size="29.0" />
          </font>
       </Label>
-      <Button alignment="CENTER" layoutX="211.0" layoutY="119.0" onAction="#goToPlayDifficulty" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Easy">
+      <Button id="record-sales" alignment="CENTER" layoutX="235.0" layoutY="250.0" mnemonicParsing="false" onAction="#goToPlayDifficulty" prefHeight="37.0" prefWidth="132.0" stylesheets="@../application/button.css" text="Easy">
+         <font>
+            <Font size="1.0" />
+         </font>
+      </Button>
+      <Button id="record-sales" alignment="CENTER" layoutX="235.0" layoutY="331.0" mnemonicParsing="false" onAction="#goToPlayDifficulty" prefHeight="37.0" prefWidth="132.0" stylesheets="@../application/button.css" text="Medium">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button alignment="CENTER" layoutX="210.0" layoutY="240.0" onAction="#goToPlayDifficulty" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Medium">
+      <Button id="record-sales" alignment="CENTER" layoutX="234.0" layoutY="415.0" mnemonicParsing="false" onAction="#goToPlayDifficulty" prefHeight="37.0" prefWidth="132.0" stylesheets="@../application/button.css" text="Hard">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button alignment="CENTER" layoutX="210.0" layoutY="366.0" onAction="#goToPlayDifficulty" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Hard">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Button>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="226.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/quizmelogo.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
