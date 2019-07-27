@@ -13,7 +13,7 @@
    <children>
       <ImageView fitHeight="401.0" fitWidth="601.0">
          <image>
-            <Image url="@../images/wallpaper.png" />
+            <Image url="@../images/orangewallpaper.png" />
          </image>
       </ImageView>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="197.0" layoutY="60.0" prefHeight="47.0" prefWidth="206.0" text="Thank You!">
@@ -31,11 +31,7 @@
             <Font size="32.0" />
          </font>
       </Label>
-      <Button id="buttons" layoutX="234.0" layoutY="255.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="133.0" text="Sign In">
-         <stylesheets>
-            <URL value="@../application/buttons.css" />
-            <URL value="@../application/background.css" />
-         </stylesheets>
+      <Button id="record-sales" layoutX="234.0" layoutY="255.0" mnemonicParsing="false" onAction="#LoginScene" prefHeight="47.0" prefWidth="133.0" stylesheets="@../application/button.css" text="Sign In">
          <opaqueInsets>
             <Insets right="20.0" />
          </opaqueInsets></Button>

@@ -130,6 +130,7 @@ public class LoginController{
             SignUp = FXMLLoader.load(getClass().getResource("/LoginDesign/NewUser.fxml"));
             Scene loginScene = new Scene(SignUp);
             Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            window.setTitle("SignUp!");
             window.setScene(loginScene);
             window.show();
 
@@ -139,21 +140,34 @@ public class LoginController{
 
 	public void LoginScene(javafx.event.ActionEvent actionEvent) throws IOException {
         Parent login;
-        login = FXMLLoader.load(getClass().getResource("/GameDesign/logIn.fxml"));
+        login = FXMLLoader.load(getClass().getResource("/LoginDesign/Login.fxml"));
         Scene loginScene1 = new Scene(login);
         Stage window1 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        window1.setTitle("Login");
         window1.setScene(loginScene1);
+        window1.show();
+
+    }
+	
+	public void ConfirmationScene(javafx.event.ActionEvent actionEvent) throws IOException {
+        Parent confirmation;
+        confirmation = FXMLLoader.load(getClass().getResource("/LoginDesign/Confirmation.fxml"));
+        Scene confirmationScene = new Scene(confirmation);
+        Stage window1 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        window1.setTitle("Account Created Succesfully!");
+        window1.setScene(confirmationScene);
         window1.show();
 
     }
     
     @FXML
-    public void addUser() {
+    public void addUser(javafx.event.ActionEvent actionEvent) throws IOException {
     	if(checkEmptyFieldsShowError() == false){
     		hideMessage();
     		application.NewUser newUser = new application.NewUser(usernameCreate.getText(), passwordCreate.getText(), firstNameCreate.getText(), lastNameCreate.getText(), emailCreate.getText());
     		if(newUser.createUser()){
     			showMessage("Account Creation Successful.");
+    			ConfirmationScene(actionEvent);
     		}else{
     			showMessage("Account Creation Unsuccessful! User already exists");
     		}
