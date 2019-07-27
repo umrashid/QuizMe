@@ -48,12 +48,12 @@
                   <Image url="@../images/quizmelogo.png" />
                </image>
             </ImageView>
-            <JFXTextField fx:id="userName1" focusColor="#cd0000" labelFloat="true" layoutX="173.0" layoutY="201.0" prefHeight="25.0" prefWidth="256.0" promptText="Username">
-            <font>
+            <JFXTextField fx:id="userNameLogin" focusColor="#cd0000" labelFloat="true" layoutX="173.0" layoutY="201.0" prefHeight="25.0" prefWidth="256.0" promptText="Username">
+            	<font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXTextField>
-            <JFXPasswordField fx:id="password1" layoutX="172.0" layoutY="242.0" prefHeight="25.0" prefWidth="256.0" promptText="Password">
+            <JFXPasswordField fx:id="passwordLogin" layoutX="172.0" layoutY="242.0" prefHeight="25.0" prefWidth="256.0" promptText="Password">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

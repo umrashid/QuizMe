@@ -24,93 +24,105 @@ import java.io.IOException;
 import java.util.EventObject;
 
 public class LoginController{
-
+	//Username and Password fields for login
     @FXML
-    private JFXTextField userName1;
+    private JFXTextField userNameLogin;
     @FXML
-    private JFXPasswordField password1;
+    private JFXPasswordField passwordLogin;
     
-    public JFXTextField getUserName1() {
-		return userName1;
-	}
-
-	public void setUserName1(JFXTextField userName1) {
-		this.userName1 = userName1;
-	}
-
-	public JFXPasswordField getPassword1() {
-		return password1;
-	}
-
-	public void setPassword1(JFXPasswordField password1) {
-		this.password1 = password1;
-	}
-    
-    //Create User Fields
-   
+    //Create User Fields for creating a user
+    @FXML
+    private JFXTextField usernameCreate;
 	@FXML
-    private TextField firstNameCreate;
+    private JFXTextField firstNameCreate;
     @FXML
-    private TextField lastNameCreate;
+    private JFXTextField lastNameCreate;
     @FXML
-    private TextField emailCreate;
+    private JFXTextField emailCreate;
     @FXML
-    private PasswordField passwordCreate;
+    private JFXPasswordField passwordCreate;
     @FXML
     private Label message;
     
-    
-    // The Create user fields //
-    private TextField userName;
-    private TextField firstName;
-    private TextField lastName;
-    private TextField email;
-    private PasswordField password;
-    private Button logInButton;
-    private Label bottomLabel;
+    /* ----------------------------- Getters and Setters ------------------------------------------*/
+    public JFXTextField getUserNameLogin() {
+		return userNameLogin;
+	}
 
-    @FXML
-    private TextField usernameCreate;
-    public TextField getUsernameCreate() {
+	public void setUserNameLogin(JFXTextField userNameLogin) {
+		this.userNameLogin = userNameLogin;
+	}
+
+	public JFXPasswordField getPasswordLogin() {
+		return passwordLogin;
+	}
+
+	public void setPasswordLogin(JFXPasswordField passwordLogin) {
+		this.passwordLogin = passwordLogin;
+	}
+	
+	@FXML
+	public JFXTextField getUsernameCreate() {
 		return usernameCreate;
 	}
 
-	public void setUsernameCreate(TextField usernameCreate) {
+	public void setUsernameCreate(JFXTextField usernameCreate) {
 		this.usernameCreate = usernameCreate;
 	}
 
-	public TextField getFirstNameCreate() {
+	public JFXTextField getFirstNameCreate() {
 		return firstNameCreate;
 	}
 
-	public void setFirstNameCreate(TextField firstNameCreate) {
+	public void setFirstNameCreate(JFXTextField firstNameCreate) {
 		this.firstNameCreate = firstNameCreate;
 	}
 
-	public TextField getLastNameCreate() {
+	public JFXTextField getLastNameCreate() {
 		return lastNameCreate;
 	}
 
-	public void setLastNameCreate(TextField lastNameCreate) {
+	public void setLastNameCreate(JFXTextField lastNameCreate) {
 		this.lastNameCreate = lastNameCreate;
 	}
 
-	public PasswordField getPasswordCreate() {
-		return passwordCreate;
-	}
-
-	public void setPasswordCreate(PasswordField passwordCreate) {
-		this.passwordCreate = passwordCreate;
-	}
-
-
-    public TextField getEmailCreate() {
+	public JFXTextField getEmailCreate() {
 		return emailCreate;
 	}
 
-	public void setEmailCreate(TextField emailCreate) {
+	public void setEmailCreate(JFXTextField emailCreate) {
 		this.emailCreate = emailCreate;
 	}
+
+	public JFXPasswordField getPasswordCreate() {
+		return passwordCreate;
+	}
+
+	public void setPasswordCreate(JFXPasswordField passwordCreate) {
+		this.passwordCreate = passwordCreate;
+	}
+
+	public Label getMessage() {
+		return message;
+	}
+
+	public void setMessage(Label message) {
+		this.message = message;
+	}
+    
+    /*----------------------------------------------------------------------------------------------*/
+    
+//    // The Create user fields //
+//    private TextField userName;
+//    private TextField firstName;
+//    private TextField lastName;
+//    private TextField email;
+//    private PasswordField password;
+//    private Button logInButton;
+//    private Label bottomLabel;
+
+    
+   
 
 	public void SignUpScene(javafx.event.ActionEvent actionEvent) throws IOException {
 
@@ -123,7 +135,9 @@ public class LoginController{
 
     }
 
-    public void LoginScene(javafx.event.ActionEvent actionEvent) throws IOException {
+    
+
+	public void LoginScene(javafx.event.ActionEvent actionEvent) throws IOException {
         Parent login;
         login = FXMLLoader.load(getClass().getResource("/GameDesign/logIn.fxml"));
         Scene loginScene1 = new Scene(login);
@@ -148,7 +162,7 @@ public class LoginController{
 
 
     public void logUserIn(javafx.event.ActionEvent actionEvent) throws IOException {
-        application.ExistingUser ExistingUser = new application.ExistingUser(getUserName1().getText(), getPassword1().getText());
+        application.ExistingUser ExistingUser = new application.ExistingUser(getUserNameLogin().getText(), getPasswordLogin().getText());
         if(ExistingUser.verifyPassword()){
             Parent Game;
             Game = FXMLLoader.load(getClass().getResource("/GameDesign/Game.fxml"));
