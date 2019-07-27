@@ -4,7 +4,8 @@ import java.sql.ResultSet;
 
 public class NewUser extends User {
 	private String password;
-	private String name;
+	private String firstName;
+	private String lastName;
 	private String email;
 	
 	public String getPassword() {
@@ -14,13 +15,22 @@ public class NewUser extends User {
 	public void setPassword(String password) {
 		this.password = password.trim();
 	}
+	
 
-	public String getName() {
-		return name;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setName(String name) {
-		this.name = name.trim();
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public String getEmail() {
@@ -31,20 +41,28 @@ public class NewUser extends User {
 		this.email = email.trim();
 	}
 	
-	public NewUser(String userid, String password, String name, String email){
+	public NewUser(String userid, String password, String firstName, String lastName, String email){
 		super(userid.trim());
 		this.password = password.trim();
-		this.name = name.trim();
+		this.firstName = firstName.trim();
+		this.lastName = lastName.trim();
 		this.email = email.trim();
 	}
 	
-	public void createUser(){
+	public boolean createUser(){
 		if(userExists()){
 			System.out.println("User already Exists");
+			return false;
 		}else{
-			String insertUser = String.format("INSERT INTO users VALUES('%s','%s','%s','%s')", getUserid(), getPassword(), getName(), getEmail());
-			db.changeQuery(insertUser);
-			System.out.println("User created: \nName: " + getName() + "\nUser ID: " + getUserid());
+			String insertUser = String.format("INSERT INTO users VALUES('%s','%s','%s','%s','%s')", getUserid(), getPassword(), getFirstName(), getLastName(), getEmail());
+			if(db.changeQuery(insertUser)){
+				System.out.println("User created: \nName: " + getFirstName() + " " + getLastName() + "\nUser ID: " + getUserid());
+				return true;
+			}else{
+				System.out.println("User wasn't inserted in the database!");
+				return false;
+			}
+			
 		}
 	}
 	

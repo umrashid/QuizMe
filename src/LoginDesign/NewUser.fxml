@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LoginController">
+   <children>
+      <GridPane alignment="CENTER" layoutX="90.0" layoutY="37.0" prefHeight="300.0" prefWidth="401.0" AnchorPane.bottomAnchor="63.0" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="109.0" AnchorPane.topAnchor="37.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" prefHeight="43.0" prefWidth="391.0" text="Please fill up all the information to create the account:" wrapText="true">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="usernameCreate" prefHeight="25.0" prefWidth="296.0" promptText="Username" GridPane.rowIndex="1" />
+            <TextField fx:id="firstNameCreate" promptText="First Name" GridPane.rowIndex="2" />
+            <TextField fx:id="lastNameCreate" prefHeight="25.0" prefWidth="378.0" promptText="Last Name" GridPane.rowIndex="3" />
+            <TextField fx:id="emailCreate" promptText="E-mail" GridPane.rowIndex="4" />
+            <Button fx:id="signUp" alignment="CENTER" mnemonicParsing="false" onAction="#addUser" prefHeight="25.0" prefWidth="155.0" text="Sign Up!" textAlignment="CENTER" GridPane.rowIndex="6" />
+            <PasswordField fx:id="passwordCreate" promptText="Password" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+      <Label fx:id="message" alignment="CENTER" contentDisplay="CENTER" layoutX="96.0" layoutY="345.0" prefHeight="17.0" prefWidth="396.0" text="Label" textFill="#ee0909" visible="false" />
+   </children>
+</AnchorPane>

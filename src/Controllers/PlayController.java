@@ -12,6 +12,7 @@ import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
 import application.CategoryGame;
+import application.DifficultyGame;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -49,11 +50,13 @@ public class PlayController {
 	private ProgressBar timer;
 	
 	private CategoryGame categoryGame = new CategoryGame();
-	private String Category = "Astrology";
+	private DifficultyGame difficultyGame = new DifficultyGame();
+	private String Category;
+	private String Difficulty;
 	private double Score;
 	private String categoryExplanation;
 	private String difficultyExplanation;
-	private HashMap<String, String[]> questions = categoryGame.getFiveQuestions(this.Category);
+	private HashMap<String, String[]> questions;
 	
 	public HashMap<String, String[]> getQuestions() {
 		return questions;
@@ -68,7 +71,7 @@ public class PlayController {
 	}
 
 	public void setCategory(String category) {
-		Category = category;
+		this.Category = category;
 	}
 	
 	public double getScore() {
@@ -78,6 +81,15 @@ public class PlayController {
 	public void setScore(double score) {
 		this.Score = score;
 	}	
+	
+	public String getDifficulty() {
+		return Difficulty;
+	}
+
+	public void setDifficulty(String difficulty) {
+		Difficulty = difficulty;
+	}
+	
 	
 	@FXML
 	public void startGame(){
@@ -224,7 +236,7 @@ public class PlayController {
 		window.setScene(categoryScene);
 		window.show();
 	}
-	
+	@FXML
 	public void goToDifficulty(ActionEvent event) throws IOException{
 		Parent category = FXMLLoader.load(getClass().getResource("/GameDesign/Difficulty.fxml"));
 		Scene categoryScene = new Scene(category);
@@ -234,16 +246,34 @@ public class PlayController {
 	}
 	
 	@FXML
-	public void goToPlay(ActionEvent event) throws IOException{
+	public void goToPlayCategory(ActionEvent event) throws IOException{
 		Button btn = (Button) event.getSource();
-		setCategory(btn.getText());
-		Parent game = FXMLLoader.load(getClass().getResource("/GameDesign/Play.fxml"));
-		Scene gameScene = new Scene(game);
-		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-		window.setScene(gameScene);
-		window.show();
+		String categoryText = btn.getText();
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/GameDesign/Play.fxml"));
+		Parent root = (Parent) loader.load();
+		PlayController controller = loader.getController();
+		controller.setCategory(categoryText);
+		controller.setQuestions(categoryGame.getFiveQuestions(controller.Category));
+		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		stage.setScene(new Scene(root));
+		stage.show();
 	}
 	
+	@FXML
+	public void goToPlayDifficulty(ActionEvent event) throws IOException{
+		Button btn = (Button) event.getSource();
+		String diffcultyText = btn.getText();
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/GameDesign/Play.fxml"));
+		Parent root = (Parent) loader.load();
+		PlayController controller = loader.getController();
+		controller.setDifficulty(diffcultyText);
+		controller.setQuestions(difficultyGame.getFiveQuestions(controller.Difficulty));
+		//For new window Stage stage = new Stage();
+		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow(); // For existing window
+		stage.setScene(new Scene(root));
+		stage.show();
+	}
+
 
 	
 }

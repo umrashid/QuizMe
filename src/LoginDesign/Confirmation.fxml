@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="wallpaper" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LoginController">
+   <children>
+      <ImageView fitHeight="401.0" fitWidth="601.0">
+         <image>
+            <Image url="@../images/wallpaper.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="197.0" layoutY="60.0" prefHeight="47.0" prefWidth="206.0" text="Thank You!">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="72.0" layoutY="107.0" prefHeight="47.0" prefWidth="456.0" text="Now you can enjoy our game!">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="72.0" layoutY="154.0" prefHeight="47.0" prefWidth="456.0" text="Please sign in to continue:">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Button id="buttons" layoutX="234.0" layoutY="255.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="133.0" text="Sign In">
+         <stylesheets>
+            <URL value="@../application/buttons.css" />
+            <URL value="@../application/background.css" />
+         </stylesheets>
+         <opaqueInsets>
+            <Insets right="20.0" />
+         </opaqueInsets></Button>
+   </children>
+   <stylesheets>
+      <URL value="@../application/buttons.css" />
+      <URL value="@../application/background.css" />
+   </stylesheets>
+</AnchorPane>

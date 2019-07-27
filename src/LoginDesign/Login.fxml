@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LoginController">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="400" prefWidth="600">
+         <children>
+            <ImageView fitHeight="406.0" fitWidth="600.0" layoutY="-4.0">
+               <image>
+                  <Image url="@../images/orangewallpaper.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="202.0" layoutY="157.0" prefHeight="27.0" prefWidth="196.0" text="Please Sign in">
+               <font>
+                  <Font name="Arial Italic" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="userName1" layoutX="180.0" layoutY="201.0" prefWidth="240.0" promptText="Username or email address" />
+            <PasswordField fx:id="password1" layoutX="180.0" layoutY="240.0" prefWidth="240.0" promptText="Password" />
+            <Button id="record-sales" fx:id="logInButton" defaultButton="true" layoutX="277.0" layoutY="296.0" mnemonicParsing="false" onAction="#logUserIn" stylesheets="@../application/buttons.css" text="Login" />
+            <Hyperlink layoutX="229.0" layoutY="341.0" onAction="#SignUpScene" text="New? Create an account?" textFill="#5712eb" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="225.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/quizmelogo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>

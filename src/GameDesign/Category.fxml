@@ -26,32 +26,32 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Animals" GridPane.rowIndex="1">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToPlayCategory" prefHeight="82.0" prefWidth="179.0" text="Animals" GridPane.rowIndex="1">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Politics" GridPane.columnIndex="2">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToPlayCategory" prefHeight="82.0" prefWidth="179.0" text="Politics" GridPane.columnIndex="2">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Astrology" GridPane.columnIndex="1">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToPlayCategory" prefHeight="82.0" prefWidth="179.0" text="Astrology" GridPane.columnIndex="1">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToPlay" prefHeight="82.0" prefWidth="179.0" text="Capitals">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToPlayCategory" prefHeight="82.0" prefWidth="179.0" text="Capitals">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Geography" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToPlayCategory" prefHeight="82.0" prefWidth="179.0" text="Geography" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Automobiles" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToPlayCategory" prefHeight="82.0" prefWidth="179.0" text="Automobiles" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <font>
                   <Font size="24.0" />
                </font>

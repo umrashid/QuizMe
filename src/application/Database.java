@@ -33,14 +33,16 @@ public class Database {
 		
 	}
 	
-	public void changeQuery(String query){
+	public boolean changeQuery(String query){
 		
 		try {
 			this.stmt.executeUpdate(query);
 			System.out.println("Updating Query Successful");
+			return true;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println("Updating Query Failed");
+			return false;
 		}
 		
 		

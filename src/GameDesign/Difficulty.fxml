@@ -14,17 +14,17 @@
             <Font size="29.0" />
          </font>
       </Label>
-      <Button alignment="CENTER" layoutX="211.0" layoutY="119.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Easy">
+      <Button alignment="CENTER" layoutX="211.0" layoutY="119.0" onAction="#goToPlayDifficulty" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Easy">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button alignment="CENTER" layoutX="210.0" layoutY="240.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Medium">
+      <Button alignment="CENTER" layoutX="210.0" layoutY="240.0" onAction="#goToPlayDifficulty" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Medium">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button alignment="CENTER" layoutX="210.0" layoutY="366.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Hard">
+      <Button alignment="CENTER" layoutX="210.0" layoutY="366.0" onAction="#goToPlayDifficulty" mnemonicParsing="false" prefHeight="82.0" prefWidth="179.0" text="Hard">
          <font>
             <Font size="24.0" />
          </font>
