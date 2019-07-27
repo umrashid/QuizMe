@@ -149,6 +149,17 @@ public class LoginController{
 
     }
 	
+	public void MainMenu(javafx.event.ActionEvent actionEvent) throws IOException {
+        Parent mainmenu;
+        mainmenu = FXMLLoader.load(getClass().getResource("/GameDesign/MainMenu.fxml"));
+        Scene mainMenuScreen = new Scene(mainmenu);
+        Stage window1 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        window1.setTitle("Main Menu");
+        window1.setScene(mainMenuScreen);
+        window1.show();
+
+    }
+	
 	public void ConfirmationScene(javafx.event.ActionEvent actionEvent) throws IOException {
         Parent confirmation;
         confirmation = FXMLLoader.load(getClass().getResource("/LoginDesign/Confirmation.fxml"));
@@ -178,12 +189,7 @@ public class LoginController{
     public void logUserIn(javafx.event.ActionEvent actionEvent) throws IOException {
         application.ExistingUser ExistingUser = new application.ExistingUser(getUserNameLogin().getText(), getPasswordLogin().getText());
         if(ExistingUser.verifyPassword()){
-            Parent Game;
-            Game = FXMLLoader.load(getClass().getResource("/GameDesign/Game.fxml"));
-            Scene loginScene1 = new Scene(Game);
-            Stage window2 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            window2.setScene(loginScene1);
-            window2.show();
+           MainMenu(actionEvent);
 
         }
     }
