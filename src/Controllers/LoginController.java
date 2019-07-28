@@ -150,13 +150,24 @@ public class LoginController{
     }
 	
 	public void MainMenu(javafx.event.ActionEvent actionEvent) throws IOException {
-        Parent mainmenu;
-        mainmenu = FXMLLoader.load(getClass().getResource("/GameDesign/MainMenu.fxml"));
-        Scene mainMenuScreen = new Scene(mainmenu);
-        Stage window1 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        window1.setTitle("Main Menu");
-        window1.setScene(mainMenuScreen);
-        window1.show();
+//        Parent mainmenu;
+//        mainmenu = FXMLLoader.load(getClass().getResource("/GameDesign/MainMenu.fxml"));
+//        Scene mainMenuScreen = new Scene(mainmenu);
+//        Stage window1 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+//        window1.setTitle("Main Menu");
+//        window1.setScene(mainMenuScreen);
+//        window1.show();
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/GameDesign/MainMenu.fxml"));
+		Parent root = (Parent) loader.load();
+		MainMenuController controller = loader.getController();
+		System.out.println("User ID passed to Main Menu: " + getUserNameLogin().getText());
+		controller.setUserID(getUserNameLogin().getText());
+		/*For new window Stage stage = new Stage();*/
+		Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow(); // For existing window
+		stage.setScene(new Scene(root));
+		stage.setTitle("Main Menu");
+		stage.show();
 
     }
 	

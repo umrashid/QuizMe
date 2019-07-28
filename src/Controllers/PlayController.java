@@ -65,6 +65,7 @@ public class PlayController {
 	private double Score;
 	private String categoryExplanation;
 	private String difficultyExplanation;
+	private String userID;
 	private HashMap<String, String[]> questions;
 	
 	public HashMap<String, String[]> getQuestions() {
@@ -97,6 +98,13 @@ public class PlayController {
 
 	public void setDifficulty(String difficulty) {
 		Difficulty = difficulty;
+	}
+	public String getUserID() {
+		return userID;
+	}
+
+	public void setUserID(String userID) {
+		this.userID = userID;
 	}
 	
 	
@@ -284,19 +292,42 @@ public class PlayController {
 	
 	@FXML
 	public void goToCategory(ActionEvent event) throws IOException{
-		Parent category = FXMLLoader.load(getClass().getResource("/GameDesign/Category.fxml"));
-		Scene categoryScene = new Scene(category);
-		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-		window.setScene(categoryScene);
-		window.show();
+//		Parent category = FXMLLoader.load(getClass().getResource("/GameDesign/Category.fxml"));
+//		Scene categoryScene = new Scene(category);
+//		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+//		window.setScene(categoryScene);
+//		window.show();
+		
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/GameDesign/Category.fxml"));
+		Parent root = (Parent) loader.load();
+		PlayController controller = loader.getController();
+		System.out.println("User ID passed to Category Selection: " + getUserID());
+		controller.setUserID(getUserID());
+		/*For new window Stage stage = new Stage();*/
+		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow(); // For existing window
+		stage.setScene(new Scene(root));
+		stage.setTitle("Category Selection");
+		stage.show();
 	}
 	@FXML
 	public void goToDifficulty(ActionEvent event) throws IOException{
-		Parent category = FXMLLoader.load(getClass().getResource("/GameDesign/Difficulty.fxml"));
-		Scene categoryScene = new Scene(category);
-		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-		window.setScene(categoryScene);
-		window.show();
+//		Parent category = FXMLLoader.load(getClass().getResource("/GameDesign/Difficulty.fxml"));
+//		Scene categoryScene = new Scene(category);
+//		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+//		window.setScene(categoryScene);
+//		window.show();
+		
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/GameDesign/Difficulty.fxml"));
+		Parent root = (Parent) loader.load();
+		PlayController controller = loader.getController();
+		System.out.println("User ID passed to Difficulty Selection: " + getUserID());
+		controller.setUserID(getUserID());
+		/*For new window Stage stage = new Stage();*/
+		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow(); // For existing window
+		stage.setScene(new Scene(root));
+		stage.setTitle("Difficulty Selection");
+		stage.show();
+		
 	}
 	
 	@FXML
@@ -308,6 +339,8 @@ public class PlayController {
 		PlayController controller = loader.getController();
 		controller.setCategory(categoryText);
 		controller.setQuestions(categoryGame.getFiveQuestions(controller.Category));
+		controller.setUserID(getUserID());
+		System.out.println("User ID passed to Play Category Game: " + getUserID());
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		stage.setScene(new Scene(root));
 		stage.show();
@@ -322,6 +355,8 @@ public class PlayController {
 		PlayController controller = loader.getController();
 		controller.setDifficulty(diffcultyText);
 		controller.setQuestions(difficultyGame.getFiveQuestions(controller.Difficulty));
+		controller.setUserID(getUserID());
+		System.out.println("User ID passed to Play Difficulty Game: " + getUserID());
 		//For new window Stage stage = new Stage();
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow(); // For existing window
 		stage.setScene(new Scene(root));
@@ -336,6 +371,8 @@ public class PlayController {
 		System.out.println("Play Controller has score: " + getScore());
 		controller.setScore(getScore());
 		controller.showScore();
+		controller.setUserID(getUserID());
+		System.out.println("User ID passed to Score Controller: " + getUserID());
 		/*For new window Stage stage = new Stage();*/
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow(); // For existing window
 		stage.setScene(new Scene(root));
