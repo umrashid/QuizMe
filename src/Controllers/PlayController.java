@@ -31,6 +31,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import application.Score;
 
 public class PlayController {
 	@FXML
@@ -63,9 +64,8 @@ public class PlayController {
 	private String Category;
 	private String Difficulty;
 	private double Score;
-	private String categoryExplanation;
-	private String difficultyExplanation;
 	private String userID;
+	private boolean categoryGameOrNot;
 	private HashMap<String, String[]> questions;
 	
 	public HashMap<String, String[]> getQuestions() {
@@ -107,13 +107,27 @@ public class PlayController {
 		this.userID = userID;
 	}
 	
-	
+	public boolean isCategoryGameOrNot() {
+		return categoryGameOrNot;
+	}
+
+	public void setCategoryGameOrNot(boolean categoryGameOrNot) {
+		this.categoryGameOrNot = categoryGameOrNot;
+	}
+
 	@FXML
 	public void startGame(){
 			showGameMenu();
 			String[] oneQuestion = getRandomQuestion();
 			if(oneQuestion == null){
 				System.out.println(Score);
+				if(isCategoryGameOrNot()){
+					Score score = new Score(getUserID(),(int)getScore(),isCategoryGameOrNot(), getCategory());
+					score.insertScore();
+				}else{
+					Score score = new Score(getUserID(),(int)getScore(),isCategoryGameOrNot(), getDifficulty());
+					score.insertScore();
+				}
 				showScoreButton();
 				return;
 			}
@@ -340,7 +354,9 @@ public class PlayController {
 		controller.setCategory(categoryText);
 		controller.setQuestions(categoryGame.getFiveQuestions(controller.Category));
 		controller.setUserID(getUserID());
+		controller.setCategoryGameOrNot(true);
 		System.out.println("User ID passed to Play Category Game: " + getUserID());
+		
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		stage.setScene(new Scene(root));
 		stage.show();
@@ -356,6 +372,7 @@ public class PlayController {
 		controller.setDifficulty(diffcultyText);
 		controller.setQuestions(difficultyGame.getFiveQuestions(controller.Difficulty));
 		controller.setUserID(getUserID());
+		controller.setCategoryGameOrNot(false);
 		System.out.println("User ID passed to Play Difficulty Game: " + getUserID());
 		//For new window Stage stage = new Stage();
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow(); // For existing window
