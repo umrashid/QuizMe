@@ -8,3 +8,45 @@
 #text{
 	-fx-text-fill: white;
 }
+
+#back {
+	-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #605b5c, #1e1d1d);
+}
+.table-view .scroll-bar:horizontal .increment-arrow,
+.table-view .scroll-bar:horizontal .decrement-arrow,
+.table-view .scroll-bar:horizontal .increment-button,
+.table-view .scroll-bar:horizontal .decrement-button {
+    -fx-padding:0;
+  }
+  
+  .table-view .column-header, .table-view .filler {
+    -fx-size: 35;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-border-color: 
+        transparent
+        transparent
+        derive(-fx-base, 80%) 
+        transparent;
+    -fx-border-insets: 0 10 1 0;
+}
+.table-view {
+    -fx-base: #1d1d1d;
+    -fx-control-inner-background: #1d1d1d;
+    -fx-background-color: #1d1d1d;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 5;
+}
+.table-view .table-cell{
+    -fx-text-fill: black;
+    -fx-font-family: "Segoe UI Light";
+    -fx-font-size: 12pt;
+    
+    -fx-background-color: #f0f0f5;
+    
+}
+.table-row-cell:selected {
+    -fx-background-color: transparent;
+   
+}

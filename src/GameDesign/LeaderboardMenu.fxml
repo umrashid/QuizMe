@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LeaderboardController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="602.0">
+         <image>
+            <Image url="@../images/orangewallpaper.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="226.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/quizmelogo.png" />
+         </image>
+      </ImageView>
+      <Button id="record-sales" layoutX="235.0" layoutY="238.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="132.0" stylesheets="@../application/button.css" text="Category" />
+      <Button id="record-sales" layoutX="235.0" layoutY="324.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="132.0" stylesheets="@../application/button.css" text="Difficulty" />
+      <Label alignment="CENTER" layoutX="80.0" layoutY="177.0" prefHeight="34.0" prefWidth="452.0" text="Which leaderboards would like to view:" textFill="#eeeded">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="back" prefHeight="400.0" prefWidth="600.0" stylesheets="@../application/background.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LeaderboardController">
+   <children>
+      <TableView layoutY="122.0" prefHeight="278.0" prefWidth="606.0">
+        <columns>
+            <TableColumn prefWidth="124.0" text="Rank" />
+          <TableColumn prefWidth="214.0" text="Name" />
+          <TableColumn prefWidth="260.0" text="Total Score" />
+        </columns>
+      </TableView>
+      <ProgressIndicator layoutX="497.0" layoutY="51.0" prefHeight="45.0" prefWidth="81.0" progress="0.0" />
+      <MenuButton layoutX="102.0" layoutY="26.0" mnemonicParsing="false" text="Select Difficulty">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Easy" />
+          <MenuItem mnemonicParsing="false" text="Medium" />
+            <MenuItem mnemonicParsing="false" text="Hard" />
+        </items>
+      </MenuButton>
+      <Label alignment="CENTER" layoutX="483.0" layoutY="20.0" prefHeight="21.0" prefWidth="109.0" text="Average Score" textAlignment="CENTER" textFill="#fff9f9">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutY="28.0" prefHeight="21.0" prefWidth="109.0" text="Category" textAlignment="CENTER" textFill="#fff9f9">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="7.0" layoutY="71.0" prefHeight="21.0" prefWidth="109.0" text="Username" textAlignment="CENTER" textFill="#fff9f9">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="105.0" layoutY="71.0" prefHeight="21.0" prefWidth="109.0" text="&lt;Username&gt;" textAlignment="CENTER" textFill="#fff9f9">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="242.0" layoutY="22.0" prefHeight="21.0" prefWidth="109.0" text="Rank" textAlignment="CENTER" textFill="#fff9f9">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="249.0" layoutY="77.0" prefHeight="21.0" prefWidth="109.0" text="&lt;rank&gt;" textAlignment="CENTER" textFill="#fff9f9">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="351.0" layoutY="77.0" prefHeight="21.0" prefWidth="109.0" text="&lt;total&gt;" textAlignment="CENTER" textFill="#fff9f9">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="351.0" prefHeight="83.0" prefWidth="109.0" text="Total Points" textAlignment="CENTER" textFill="#fff9f9" wrapText="true">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

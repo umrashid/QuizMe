@@ -42,5 +42,19 @@ public class MainMenuController {
 	
 	}
 	
+	public void Leaderboard(javafx.event.ActionEvent actionEvent) throws IOException {
+		
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/GameDesign/LeaderboardMenu.fxml"));
+		Parent root = (Parent) loader.load();
+		LeaderboardController controller = loader.getController();
+		System.out.println("User ID passed to Leaderboard: " + getUserID());
+		controller.setUserID(getUserID());
+		/*For new window Stage stage = new Stage();*/
+		Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow(); // For existing window
+		stage.setScene(new Scene(root));
+		stage.setTitle("Leaderboard Menu");
+		stage.show();
+	
+	}
 	
 }
