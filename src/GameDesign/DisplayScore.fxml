@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../application/button.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ScoreController">
+   <children>
+      <ImageView fitHeight="401.0" fitWidth="600.0">
+         <image>
+            <Image url="@../images/orangewallpaper.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="123.0" fitWidth="145.0" layoutX="228.0" layoutY="14.0">
+         <image>
+            <Image url="@../images/quizmelogo.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="150.0" layoutY="146.0" prefHeight="47.0" prefWidth="301.0" text="You Scored:" textFill="#eeecec">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Label fx:id="showScore" alignment="CENTER" layoutX="150.0" layoutY="201.0" prefHeight="47.0" prefWidth="301.0" textFill="#f8f4f4">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Button id="record-sales" layoutX="86.0" layoutY="295.0" mnemonicParsing="false" onAction="#GameSelection" prefHeight="47.0" prefWidth="179.0" text="Back to Game Selection" />
+      <Button id="record-sales" layoutX="335.0" layoutY="295.0" mnemonicParsing="false" onAction="#MainMenu" prefHeight="47.0" prefWidth="179.0" text="Back To Main Menu" />
+   </children>
+</AnchorPane>

@@ -52,6 +52,8 @@ public class PlayController {
 	@FXML
 	private Button startGame;
 	@FXML
+	private Button viewScore;
+	@FXML
 	private ProgressBar timer;
 	@FXML
 	private ImageView logo;
@@ -104,6 +106,7 @@ public class PlayController {
 			String[] oneQuestion = getRandomQuestion();
 			if(oneQuestion == null){
 				System.out.println(Score);
+				showScoreButton();
 				return;
 			}
 			showLabel(showQuestion, oneQuestion[0]);
@@ -193,10 +196,35 @@ public class PlayController {
 	}
 	
 	public void showChoices(String option1, String option2, String option3, String option4){
-		choice1.setText(option1);
-		choice2.setText(option2);
-		choice3.setText(option3);
-		choice4.setText(option4);
+		//Show choices at random location
+		Random rn = new Random();
+		int randomNumber = rn.nextInt(4) + 1;
+		switch(randomNumber){
+			case 1:
+				choice1.setText(option1);
+				choice2.setText(option2);
+				choice3.setText(option3);
+				choice4.setText(option4);
+				break;
+			case 2:
+				choice1.setText(option2);
+				choice2.setText(option4);
+				choice3.setText(option3);
+				choice4.setText(option1);
+				break;
+			case 3:
+				choice1.setText(option1);
+				choice2.setText(option4);
+				choice3.setText(option2);
+				choice4.setText(option3);
+				break;
+			case 4:
+				choice1.setText(option3);
+				choice2.setText(option4);
+				choice3.setText(option1);
+				choice4.setText(option2);
+				break;	
+		}
 		
 	}
 	
@@ -237,6 +265,22 @@ public class PlayController {
 		gameInfo.setText("");
 	}
 	
+	@FXML
+	public void showScoreButton(){
+		viewScore.setVisible(true);
+		choice1.setVisible(false);
+		choice2.setVisible(false);
+		choice3.setVisible(false);
+		choice4.setVisible(false);
+		startGame.setVisible(false);
+		ready.setVisible(true);
+		startGameLabel.setVisible(true);
+		startGameLabel.setText("Time to see how you did!");
+		ready.setText("Game Finished!");
+		logo.setVisible(true);
+		timer.setVisible(false);
+		showQuestion.setVisible(false);
+	}
 	
 	@FXML
 	public void goToCategory(ActionEvent event) throws IOException{
@@ -279,6 +323,20 @@ public class PlayController {
 		controller.setDifficulty(diffcultyText);
 		controller.setQuestions(difficultyGame.getFiveQuestions(controller.Difficulty));
 		//For new window Stage stage = new Stage();
+		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow(); // For existing window
+		stage.setScene(new Scene(root));
+		stage.show();
+	}
+	
+	@FXML
+	public void goToScore(ActionEvent event) throws IOException{
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/GameDesign/DisplayScore.fxml"));
+		Parent root = (Parent) loader.load();
+		ScoreController controller = loader.getController();
+		System.out.println("Play Controller has score: " + getScore());
+		controller.setScore(getScore());
+		controller.showScore();
+		/*For new window Stage stage = new Stage();*/
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow(); // For existing window
 		stage.setScene(new Scene(root));
 		stage.show();

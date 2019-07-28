@@ -44,5 +44,10 @@
             <Image url="@../images/quizmelogo.png" />
          </image>
       </ImageView>
+      <Button id="record-sales" fx:id="viewScore" layoutX="214.0" layoutY="365.0" mnemonicParsing="false" onAction="#goToScore" prefHeight="70.0" prefWidth="202.0" stylesheets="@../application/button.css" text="View Score" visible="false">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
