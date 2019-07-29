@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PlayController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="602.0">
@@ -29,5 +28,14 @@
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
+      <JFXButton layoutX="14.0" layoutY="14.0" onAction="#MainMenu" prefHeight="36.0" prefWidth="27.0">
+         <graphic>
+            <ImageView fitHeight="32.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/left-arrow.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
    </children>
 </AnchorPane>

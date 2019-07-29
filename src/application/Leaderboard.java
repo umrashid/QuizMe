@@ -99,7 +99,7 @@ public class Leaderboard {
 		ResultSet rs = db.runQuery(query);
 		try {
 			int rank = 0;
-			while(rs.next() || rank == 9){
+			while(rs.next() && rank < 10){
 				String username = rs.getString("userID");
 				int totalpoints = rs.getInt("totalpoints");
 				results[rank][0] = username;
@@ -176,7 +176,7 @@ public class Leaderboard {
 		ResultSet rs = db.runQuery(query);
 		try {
 			int rank = 0;
-			while(rs.next() || rank == 9){
+			while(rs.next() && rank < 10){
 				String username = rs.getString("userID");
 				int totalpoints = rs.getInt("totalpoints");
 				results[rank][0] = username;
