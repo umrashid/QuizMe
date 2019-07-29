@@ -296,6 +296,7 @@ public class PlayController {
 		choice2.setVisible(false);
 		choice3.setVisible(false);
 		choice4.setVisible(false);
+		startGame.setDisable(true);
 		startGame.setVisible(false);
 		ready.setVisible(true);
 		startGameLabel.setVisible(true);
