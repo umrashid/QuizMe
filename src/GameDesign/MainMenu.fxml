@@ -20,8 +20,8 @@
             <Image url="@../images/quizmelogo.png" />
          </image>
       </ImageView>
-      <Button id="record-sales" layoutX="225.0" layoutY="188.0" mnemonicParsing="false" onAction="#GameSelection" prefHeight="38.0" prefWidth="150.0" stylesheets="@../application/button.css" text="Play" />
-      <Button id="record-sales" layoutX="225.0" layoutY="251.0" mnemonicParsing="false" onAction="#Leaderboard" prefHeight="38.0" prefWidth="150.0" stylesheets="@../application/button.css" text="Leaderboards" />
-      <Button id="record-sales" layoutX="225.0" layoutY="314.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="150.0" stylesheets="@../application/button.css" text="Chat" />
+      <Button id="record-sales" layoutX="225.0" layoutY="220.0" mnemonicParsing="false" onAction="#GameSelection" prefHeight="38.0" prefWidth="150.0" stylesheets="@../application/button.css" text="Play" />
+      <Button id="record-sales" layoutX="225.0" layoutY="293.0" mnemonicParsing="false" onAction="#Leaderboard" prefHeight="38.0" prefWidth="150.0" stylesheets="@../application/button.css" text="Leaderboards" />
+      <Button id="record-sales" layoutX="225.0" layoutY="314.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="150.0" stylesheets="@../application/button.css" text="Chat" visible="false" />
    </children>
 </AnchorPane>
