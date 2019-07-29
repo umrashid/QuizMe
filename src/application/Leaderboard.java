@@ -194,13 +194,6 @@ public class Leaderboard {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
 	public int getDifficultyID(String difficulty){
 		String query = String.format("Select * from difficultylevels where difficultyLevel='%s'", difficulty.trim());
 		int difficultyID = 0;

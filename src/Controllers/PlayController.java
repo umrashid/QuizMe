@@ -67,6 +67,7 @@ public class PlayController {
 	private String userID;
 	private boolean categoryGameOrNot;
 	private HashMap<String, String[]> questions;
+	private int count = 0;
 	
 	public HashMap<String, String[]> getQuestions() {
 		return questions;
@@ -119,7 +120,8 @@ public class PlayController {
 	public void startGame(){
 			showGameMenu();
 			String[] oneQuestion = getRandomQuestion();
-			if(oneQuestion == null){
+			count++;
+			if(oneQuestion == null || count > 5){
 				System.out.println(Score);
 				if(isCategoryGameOrNot()){
 					Score score = new Score(getUserID(),(int)getScore(),isCategoryGameOrNot(), getCategory());
