@@ -21,8 +21,8 @@
             <Image url="@../images/quizmelogo.png" />
          </image>
       </ImageView>
-      <Button id="record-sales" layoutX="235.0" layoutY="238.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="132.0" stylesheets="@../application/button.css" text="Category" />
-      <Button id="record-sales" layoutX="235.0" layoutY="324.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="132.0" stylesheets="@../application/button.css" text="Difficulty" />
+      <Button id="record-sales" layoutX="235.0" layoutY="238.0" mnemonicParsing="false" onAction="#LeaderboardCategory" prefHeight="44.0" prefWidth="132.0" stylesheets="@../application/button.css" text="Category" />
+      <Button id="record-sales" layoutX="235.0" layoutY="324.0" mnemonicParsing="false" onAction="#LeaderboardDifficulty" prefHeight="44.0" prefWidth="132.0" stylesheets="@../application/button.css" text="Difficulty" />
       <Label alignment="CENTER" layoutX="80.0" layoutY="177.0" prefHeight="34.0" prefWidth="452.0" text="Which leaderboards would like to view:" textFill="#eeeded">
          <font>
             <Font name="System Bold" size="23.0" />

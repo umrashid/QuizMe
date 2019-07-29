@@ -3,3 +3,8 @@ INSERT INTO users VALUES ('player2', 'asdfghjk', 'Steve', 'Jogn', 'steve@example
 INSERT INTO users VALUES ('player3', 'zxcvbnm,', 'Peter', 'Stevenson', 'peter@example.com');
 INSERT INTO users VALUES ('player4', '12345678', 'Tony', 'Larson', 'tony@example.com');
 INSERT INTO users VALUES ('player5', 'hello', 'John', 'Smith', 'john@example.com');
+insert into users values ('player6', 'tUzWlYH', 'Fania', 'McPhaden', 'fmcphaden0@hexun.com');
+insert into users values ('player7', 'DADu0yJnsvX', 'Kathryn', 'Robker', 'krobker1@jimdo.com');
+insert into users values ('player8', '6VXgfyYm', 'Kellina', 'Menchenton', 'kmenchenton2@g.co');
+insert into users values ('player9', 'yYB0GbaEA', 'Kippie', 'Perett', 'kperett3@opensource.org');
+insert into users values ('player10', '2EJcLD9', 'Karlene', 'Kidstone', 'kkidstone4@nifty.com');

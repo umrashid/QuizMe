@@ -39,11 +39,18 @@
     -fx-padding: 5;
 }
 .table-view .table-cell{
-    -fx-text-fill: black;
+    -fx-text-fill: white;
     -fx-font-family: "Segoe UI Light";
     -fx-font-size: 12pt;
-    
-    -fx-background-color: #f0f0f5;
+    -fx-background-color: #1d1d1d;
+    -fx-alignment: CENTER-RIGHT;
+    -fx-alignment: CENTER;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: 
+        transparent
+        transparent
+        derive(-fx-base, 80%) 
+        transparent;
     
 }
 .table-row-cell:selected {
