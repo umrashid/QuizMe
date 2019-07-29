@@ -1,5 +1,50 @@
-INSERT INTO Question (question, correct, option1, option2, option3, categoryID, difficultyID, questionTypeID, ImagePath)
-Values
+-- phpMyAdmin SQL Dump
+-- version 4.8.3
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jul 29, 2019 at 04:48 AM
+-- Server version: 10.1.35-MariaDB
+-- PHP Version: 7.2.9
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `QuizMe`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `question`
+--
+
+CREATE TABLE `question` (
+  `questionID` int(11) NOT NULL,
+  `question` varchar(1000) NOT NULL,
+  `correct` varchar(255) NOT NULL,
+  `option1` varchar(255) NOT NULL,
+  `option2` varchar(255) NOT NULL,
+  `option3` varchar(255) NOT NULL,
+  `categoryID` int(11) NOT NULL,
+  `difficultyID` int(11) NOT NULL,
+  `questionTypeID` int(11) NOT NULL,
+  `ImagePath` varchar(1000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `question`
+--
+
 INSERT INTO `question` (`questionID`, `question`, `correct`, `option1`, `option2`, `option3`, `categoryID`, `difficultyID`, `questionTypeID`, `ImagePath`) VALUES
 (83, 'What is the capital of Canada?', 'Ottawa', 'Toronto', 'Vancouver', 'Montreal', 1, 1, 1, NULL),
 (84, 'What is the capital of USA?', 'Washington DC', 'Chicago', 'Los Angeles', 'New York', 1, 1, 1, NULL),
@@ -55,3 +100,45 @@ INSERT INTO `question` (`questionID`, `question`, `correct`, `option1`, `option2
 (135, 'When was Scuderia Ferrari Founded?', '1929', '1945', '1939', '1937', 6, 3, 1, 'null'),
 (136, 'Which among these is the fastest category of cars?', 'Dragesters', 'F1', 'SUV', 'Sports Cars', 6, 3, 1, 'null'),
 (137, '______ is a French automotive manufacturer, part of Groupe PSA', 'Peugot', 'Pagani', 'GTA Spano', 'Ferrari', 6, 3, 1, NULL);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `question`
+--
+ALTER TABLE `question`
+  ADD PRIMARY KEY (`questionID`),
+  ADD UNIQUE KEY `questionID` (`questionID`),
+  ADD KEY `questionID_2` (`questionID`),
+  ADD KEY `categoryID` (`categoryID`),
+  ADD KEY `difficultyID` (`difficultyID`),
+  ADD KEY `questionTypeID` (`questionTypeID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `question`
+--
+ALTER TABLE `question`
+  MODIFY `questionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=156;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `question`
+--
+ALTER TABLE `question`
+  ADD CONSTRAINT `question_ibfk_1` FOREIGN KEY (`categoryID`) REFERENCES `categories` (`categoryID`),
+  ADD CONSTRAINT `question_ibfk_2` FOREIGN KEY (`difficultyID`) REFERENCES `difficultylevels` (`difficultyID`),
+  ADD CONSTRAINT `question_ibfk_3` FOREIGN KEY (`questionTypeID`) REFERENCES `questiontype` (`questionTypeID`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

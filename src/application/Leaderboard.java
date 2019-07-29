@@ -66,7 +66,7 @@ public class Leaderboard {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return "";
+			return null;
 		}
 	}
 	
@@ -143,7 +143,7 @@ public class Leaderboard {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return "";
+			return null;
 		}
 	}
 	

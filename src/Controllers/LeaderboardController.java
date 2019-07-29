@@ -93,6 +93,9 @@ public class LeaderboardController {
 		leaderboard.setCategory(categoryText);
 		String totalPoints = leaderboard.totalPointsCategory();
 		String averagePoints = leaderboard.averageScoreCategory();
+		if(averagePoints == null){
+			averagePoints = "0";
+		}
 		String rank = leaderboard.rankCategory();
 		String[][] topten = leaderboard.topTenCategory();
 		selectCategory.setText(categoryText);
@@ -121,6 +124,9 @@ public class LeaderboardController {
 		leaderboard.setDifficulty(difficultyText);
 		String totalPoints = leaderboard.totalPointsDifficulty();
 		String averagePoints = leaderboard.averageScoreDifficulty();
+		if(averagePoints == null){
+			averagePoints = "0";
+		}
 		String rank = leaderboard.rankDifficulty();
 		String[][] topten = leaderboard.topTenDifficulty();
 		selectCategory.setText(difficultyText);

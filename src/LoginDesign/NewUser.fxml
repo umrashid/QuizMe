@@ -34,12 +34,12 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="usernameCreate" prefHeight="25.0" prefWidth="392.0" promptText="Username" GridPane.rowIndex="1">
+            <JFXTextField fx:id="usernameCreate" labelFloat="true" prefHeight="25.0" prefWidth="392.0" promptText="Username" GridPane.rowIndex="1">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="firstNameCreate" promptText="First Name" GridPane.rowIndex="2">
+            <JFXTextField fx:id="firstNameCreate" labelFloat="true" promptText="First Name" GridPane.rowIndex="2">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -49,12 +49,12 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="emailCreate" promptText="E-mall" GridPane.rowIndex="4">
+            <JFXTextField fx:id="emailCreate" labelFloat="true" promptText="E-mall" GridPane.rowIndex="4">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXTextField>
-            <JFXPasswordField fx:id="passwordCreate" prefHeight="2.0" prefWidth="396.0" promptText="Password" GridPane.rowIndex="5">
+            <JFXPasswordField fx:id="passwordCreate" labelFloat="true" prefHeight="2.0" prefWidth="396.0" promptText="Password" GridPane.rowIndex="5">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

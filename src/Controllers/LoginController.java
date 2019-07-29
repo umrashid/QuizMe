@@ -201,7 +201,9 @@ public class LoginController{
         application.ExistingUser ExistingUser = new application.ExistingUser(getUserNameLogin().getText(), getPasswordLogin().getText());
         if(ExistingUser.verifyPassword()){
            MainMenu(actionEvent);
-
+        }else{
+        	userNameLogin.setPromptText("Invalid Credentials! Please Enter Username:");
+        	passwordLogin.setPromptText("Invalid Credentials! Please Enter Password:");
         }
     }
     
