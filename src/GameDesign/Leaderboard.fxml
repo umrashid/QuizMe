@@ -25,7 +25,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <MenuButton fx:id="selectCategory" alignment="CENTER" mnemonicParsing="false" text="Select Category" GridPane.columnIndex="1">
+            <MenuButton fx:id="selectCategory" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" text="Select Category" GridPane.columnIndex="1">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#displayLeaderboardCategory" text="Capitals" />
                 <MenuItem mnemonicParsing="false" onAction="#displayLeaderboardCategory" text="Astrology" />

@@ -75,6 +75,7 @@ public class LeaderboardController {
 		LeaderboardController controller = loader.getController();
 		System.out.println("User ID passed to Leaderboard Difficulty: " + getUserID());
 		controller.setUserID(getUserID());
+		controller.showUsername.setText(getUserID());
 		/*For new window Stage stage = new Stage();*/
 		Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow(); // For existing window
 		stage.setScene(new Scene(root));
@@ -95,6 +96,34 @@ public class LeaderboardController {
 		String rank = leaderboard.rankCategory();
 		String[][] topten = leaderboard.topTenCategory();
 		selectCategory.setText(categoryText);
+		showTotal.setVisible(true);
+		showTotal.setText(totalPoints);
+		showRank.setVisible(true);
+		showRank.setText(rank);
+		averageScoreShow.setVisible(true);
+		averageScoreShow.setProgress(Double.parseDouble(averagePoints)/50);
+		rankColumn.setCellValueFactory( new PropertyValueFactory<Rank,String>("rank"));
+		nameColumn.setCellValueFactory( new PropertyValueFactory<Rank,String>("userID"));
+		totalScoreColumn.setCellValueFactory( new PropertyValueFactory<Rank,String>("totalPoints"));
+		final ObservableList<Rank> data = FXCollections.observableArrayList();
+	   for(int i = 0; i < topten.length; i++){
+		   String rankString = Integer.toString(i+1); 
+		   data.add(new Rank(rankString ,topten[i][0], topten[i][1]));
+	   }
+			
+		rankTable.setItems(data);
+	}
+	public void displayLeaderboardDifficulty(javafx.event.ActionEvent actionEvent){
+		MenuItem menuItem = (MenuItem) actionEvent.getSource();
+		String difficultyText = menuItem.getText();
+		Leaderboard leaderboard = new Leaderboard();
+		leaderboard.setUserID(getUserID());
+		leaderboard.setDifficulty(difficultyText);
+		String totalPoints = leaderboard.totalPointsDifficulty();
+		String averagePoints = leaderboard.averageScoreDifficulty();
+		String rank = leaderboard.rankDifficulty();
+		String[][] topten = leaderboard.topTenDifficulty();
+		selectCategory.setText(difficultyText);
 		showTotal.setVisible(true);
 		showTotal.setText(totalPoints);
 		showRank.setVisible(true);

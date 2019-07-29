@@ -115,6 +115,90 @@ public class Leaderboard {
 		}
 	}
 	
+	public String totalPointsDifficulty(){
+		int difficultyID = getDifficultyID(getDifficulty());
+		String query = String.format("Select * from leaderboard_difficulty_total where userID='%s' and difficultyID='%d'", getUserID(), difficultyID);
+		ResultSet rs = db.runQuery(query);
+		try {
+			rs.next();
+			int totalpoints = rs.getInt("totalpoints");
+			System.out.println("TotalPoints is " + totalpoints);
+			return Integer.toString(totalpoints);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return "";
+		}
+	}
+	
+	public String averageScoreDifficulty(){
+		int difficultyID = getDifficultyID(getDifficulty());
+		String query = String.format("Select * from leaderboard_difficulty_average where userID='%s' and difficultyID='%d'", getUserID(), difficultyID);
+		ResultSet rs = db.runQuery(query);
+		try {
+			rs.next();
+			int averagePoints = rs.getInt("averagePoints");
+			System.out.println("Average Points is " + averagePoints);
+			return Integer.toString(averagePoints);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return "";
+		}
+	}
+	
+	public String rankDifficulty(){
+		int difficultyID = getDifficultyID(getDifficulty());
+		String query = String.format("Select * from leaderboard_difficulty_total where difficultyID='%d' order by totalpoints DESC", difficultyID);
+		ResultSet rs = db.runQuery(query);
+		try {
+			int rank = 1;
+			while(rs.next()){
+				String username = rs.getString("userID");
+				System.out.println(username + " : " + rank);
+				if(getUserID().equals(username)){
+					return Integer.toString(rank);
+				}
+				rank++;
+			}
+			return "N/A";
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return "";
+		}
+	}
+	
+	public String[][] topTenDifficulty(){
+		String[][] results = new String[10][2];
+		int difficultyID = getDifficultyID(getDifficulty());
+		String query = String.format("Select * from leaderboard_difficulty_total where difficultyID='%d' order by totalpoints DESC", difficultyID);
+		ResultSet rs = db.runQuery(query);
+		try {
+			int rank = 0;
+			while(rs.next() || rank == 9){
+				String username = rs.getString("userID");
+				int totalpoints = rs.getInt("totalpoints");
+				results[rank][0] = username;
+				results[rank][1] = Integer.toString(totalpoints);
+				System.out.println(username + " : " + totalpoints);
+				rank++;
+			}
+			return results;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return results;
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	public int getDifficultyID(String difficulty){
