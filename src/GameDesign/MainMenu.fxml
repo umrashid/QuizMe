@@ -23,5 +23,14 @@
       <Button id="record-sales" layoutX="225.0" layoutY="220.0" mnemonicParsing="false" onAction="#GameSelection" prefHeight="38.0" prefWidth="150.0" stylesheets="@../application/button.css" text="Play" />
       <Button id="record-sales" layoutX="225.0" layoutY="293.0" mnemonicParsing="false" onAction="#Leaderboard" prefHeight="38.0" prefWidth="150.0" stylesheets="@../application/button.css" text="Leaderboards" />
       <Button id="record-sales" layoutX="225.0" layoutY="314.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="150.0" stylesheets="@../application/button.css" text="Chat" visible="false" />
+      <JFXButton layoutX="14.0" layoutY="14.0" onAction="#LoginScene" prefHeight="36.0" prefWidth="27.0">
+         <graphic>
+            <ImageView fitHeight="32.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/left-arrow.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
    </children>
 </AnchorPane>

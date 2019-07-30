@@ -57,4 +57,15 @@ public class MainMenuController {
 	
 	}
 	
+	public void LoginScene(javafx.event.ActionEvent actionEvent) throws IOException {
+        Parent login;
+        login = FXMLLoader.load(getClass().getResource("/LoginDesign/Login.fxml"));
+        Scene loginScene1 = new Scene(login);
+        Stage window1 = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        window1.setTitle("Sign In");
+        window1.setScene(loginScene1);
+        window1.show();
+
+    }
+	
 }

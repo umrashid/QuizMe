@@ -359,8 +359,8 @@ public class PlayController {
 		controller.setUserID(getUserID());
 		controller.setCategoryGameOrNot(true);
 		System.out.println("User ID passed to Play Category Game: " + getUserID());
-		
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		stage.setTitle("Play");
 		stage.setScene(new Scene(root));
 		stage.show();
 	}
@@ -380,6 +380,7 @@ public class PlayController {
 		//For new window Stage stage = new Stage();
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow(); // For existing window
 		stage.setScene(new Scene(root));
+		stage.setTitle("Play");
 		stage.show();
 	}
 	
@@ -396,6 +397,7 @@ public class PlayController {
 		/*For new window Stage stage = new Stage();*/
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow(); // For existing window
 		stage.setScene(new Scene(root));
+		stage.setTitle("Score");
 		stage.show();
 	}
 	
